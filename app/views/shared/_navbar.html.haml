@@ -1,3 +1,4 @@
-%nav.home-navbar
-  %h3 Srint.
-  = link_to 'Signup/Login', registrations_path
+%div.home-navbar
+  %h1= link_to 'Srint.', root_path, class: 'home-link'
+  .button-container
+    = link_to 'Login', registrations_path, class: 'user-btn'
