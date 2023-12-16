@@ -7,5 +7,8 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :projects
+  has_many :owned_projects, class_name: 'Project', foreign_key: 'admin_id'
+
+  has_many :authored_tasks, class_name: 'Task', foreign_key: 'author_id'
+  has_many :assigned_tasks, class_name: 'Task', foreign_key: 'assignee_id'
 end
