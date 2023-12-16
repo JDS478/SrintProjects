@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+ }
+
+ body {
+  background-color: rgb(230, 230, 230);
+ }
+
+/* font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Petit Formal Script', cursive;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-family: 'Poppins', sans-serif; */
