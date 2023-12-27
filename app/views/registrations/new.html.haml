@@ -1,0 +1,7 @@
+.form
+  = form_with model: @user, url: registrations_url, method: :post do |f|
+    .form-group
+      = f.label :username, 'Username'
+      = f.text_field :username, class: 'form-input'
+
+    = f.submit 'Signup', class: 'signup-btn'
