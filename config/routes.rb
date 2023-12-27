@@ -7,5 +7,10 @@ Rails.application.routes.draw do
 
   root "pages#index"
 
-  resources :registrations, only: %i[index create]
+  resources :registrations, only: %i[new create] do
+    collection do
+      get :login
+      post :loginuser
+    end
+  end
 end
