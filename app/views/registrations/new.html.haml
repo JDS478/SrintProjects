@@ -1,7 +1,18 @@
+
 .form
+  %h2 Signup
+
   = form_with model: @user, url: registrations_url, method: :post do |f|
     .form-group
       = f.label :username, 'Username'
       = f.text_field :username, class: 'form-input'
+
+    .form-group
+      = f.label :password, 'Password'
+      = f.text_field :password, class: 'form-input'
+
+    .form-group
+      = f.label :password_confirmation, 'Password Confirmation'
+      = f.text_field :password_confirmation, class: 'form-input'
 
     = f.submit 'Signup', class: 'signup-btn'

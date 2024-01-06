@@ -1,0 +1,17 @@
+.form-group {
+ display: flex;
+ justify-content: space-evenly;
+ flex-direction: column;
+ margin-bottom: 1rem;
+}
+
+.form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-input {
+  border: 3px solid black;
+  border-radius: 6px;
+  height: 1.5rem;
+}
