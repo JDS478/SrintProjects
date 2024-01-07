@@ -2,8 +2,22 @@
 
 require 'test_helper'
 
-class RegistrationsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
+class RegistrationsControllerTest < ActionController::TestCase
+  test 'should get login' do
+    get :login
+
+    assert_response :success
+  end
+
+  test 'should get signup/new' do
+    get :new
+
+    assert_response :success
+  end
+
+  # test 'should create new user' do
+  #   get :login
+
+  #   assert_response :success
   # end
 end
