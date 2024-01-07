@@ -21,7 +21,7 @@ class RegistrationsController < ApplicationController
   def login; end
 
   def loginuser
-    user = User.find_by(email: params[:email])
+    user = User.find_by(username: params[:username])
 
     # Authenticate method comes from bcrypt gem for user model
     if user.present? && user.authenticate(params[:password])
@@ -30,7 +30,7 @@ class RegistrationsController < ApplicationController
 
       redirect_to root_path
     else
-      flash[:alert] = 'Password is incorrect or no user found!'
+      flash[:notice] = 'Password is incorrect or no user found!'
 
       redirect_to registrations_login_path
     end

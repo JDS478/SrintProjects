@@ -14,3 +14,9 @@
   color: red;
   font-weight: bold;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+
+}
