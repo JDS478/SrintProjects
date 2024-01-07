@@ -5,12 +5,24 @@ class RegistrationsController < ApplicationController
     @user = User.new
   end
 
-  def create; end
+  def create
+    user = User.new(user_params)
+    if user.save
+      handle_login(user)
+
+      redirect_to root_path, notice: 'Signup Successful!'
+    else
+      flash[:notice] = user.errors.full_messages.uniq.join(', ')
+
+      render :new
+    end
+  end
 
   def login; end
 
   def loginuser
     user = User.find_by(email: params[:email])
+
     # Authenticate method comes from bcrypt gem for user model
     if user.present? && user.authenticate(params[:password])
       flash[:notice] = 'Signed in successfully!'
@@ -31,6 +43,6 @@ class RegistrationsController < ApplicationController
   end
 
   def handle_login(user)
-    session[:token].signed = user.id
+    cookies.signed[:token] = user.id
   end
 end
