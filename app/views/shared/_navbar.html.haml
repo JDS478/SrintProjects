@@ -1,4 +1,11 @@
 %div.home-navbar
   %h1= link_to 'Srint.', root_path, class: 'home-link'
   .button-container
-    = link_to 'Login', login_registrations_path, class: 'user-btn'
+    - if @user
+      .account-box
+        %p Hello
+        %p.welcome-text= @user.display_name
+
+        = link_to 'Signout', signout_registrations_path, class: 'signup-btn'
+    - else
+      = link_to 'Login', login_registrations_path, class: 'user-btn'

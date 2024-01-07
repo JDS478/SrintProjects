@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class RegistrationsController < ApplicationController
+  before_action :check_user, only: %i[new create login loginuser]
+
   def new
     @user = User.new
   end
@@ -36,6 +38,12 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def signout
+    cookies.delete :token
+
+    redirect_to root_path
+  end
+
   private
 
   def user_params
@@ -44,5 +52,10 @@ class RegistrationsController < ApplicationController
 
   def handle_login(user)
     cookies.signed[:token] = user.id
+  end
+
+  def check_user
+    redirect_to root_path if @user
+    # logger.info = 'Already logged in!'
   end
 end
