@@ -6,9 +6,5 @@
   width: 100%;
   /* margin: 6px; */
   border: 1px solid white;
-  height: 85vh;
-}
-
-.header {
-
+  height: fit-content;
 }

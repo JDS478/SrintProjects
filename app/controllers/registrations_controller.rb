@@ -2,10 +2,25 @@
 
 class RegistrationsController < ApplicationController
   def new
+    # flash[:notice] = 'Passwords do not match or user already exists!'
     @user = User.new
   end
 
-  def create; end
+  def create
+    raise
+
+    user = User.new(user_params)
+
+    if user.save
+      handle_login(user)
+
+      redirect_to root_path
+    else
+      flash[:notice] = 'Passwords do not match or user already exists!'
+
+      render :new
+    end
+  end
 
   def login; end
 
