@@ -1,0 +1,19 @@
+.form
+  %h2 Login
+
+  - if flash[:notice].present?
+    .notification-box
+      = flash[:notice]
+
+  = form_with model: @user, url: loginuser_registrations_path do |f|
+    .form-group
+      = f.label :username, 'Username'
+      = f.text_field :username, class: 'form-input'
+
+    .form-group
+      = f.label :password, 'Password'
+      = f.text_field :password, class: 'form-input'
+
+    .row
+      = f.submit 'Login', class: 'signup-btn'
+      = link_to 'Signup', new_registration_path, class: 'signup-btn'

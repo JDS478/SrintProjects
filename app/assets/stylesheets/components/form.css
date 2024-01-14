@@ -4,7 +4,7 @@ label {
 
 .form-group {
  display: flex;
- justify-content: space-evenly;
+ justify-content: space-between;
  flex-direction: column;
  margin-bottom: 1rem;
 }
@@ -12,10 +12,12 @@ label {
 .form {
   width: 60%;
   margin: 0 auto;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .form-input {
   border: 3px solid black;
   border-radius: 6px;
-  height: 1.5rem;
+  font-size: 1.5em;
+  height: 2rem;
 }
